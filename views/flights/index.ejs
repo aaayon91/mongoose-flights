@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,9 @@
   <title>Mongoose Flights</title>
 </head>
 <body>
-  <h1>Flight List</h1>
+  <h1>Flight List</h1> -->
+  <%- include('../partials/header') %>
+  
   <table>
     <thead>
       <tr>
@@ -25,9 +27,12 @@
           <td><%= f.airport %></td>
           <td><%= f.flightNo %></td>
           <td><%= f.departs %></td>
+          <td><a href="/flights/<%=f._id %>">DETAILS</a></td>
         </tr>
         <% }); %>
     </tbody>
   </table>
-</body>
-</html>
+  
+  <%- include('../partials/footer') %>
+<!-- </body>
+</html> -->

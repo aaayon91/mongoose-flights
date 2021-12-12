@@ -8,7 +8,13 @@ const destinationSchema = new Schema({
         type: String,
         enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN']
     },
-    arrival: Date
+    arrival: {
+        type: Date,
+        default: function() {
+            return Date.now() + 365*24*60*60*1000;
+        },
+        min: () => Date.now()
+    }
 })
 
 const flightSchema = new Schema({
