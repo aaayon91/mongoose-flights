@@ -49,7 +49,9 @@ function show(req, res) {
             // const dt = newFlight.destination.arrival;
             // let arrivalDate = `${dt.getFullYear()}-${(dt.getMonth() + 1).toString().padStart(2, '0')}`;
             // arrivalDate += `-${dt.getDate().toString().padStart(2, '0')}T${dt.toTimeString().slice(0, 5)}`;
-            res.render('flights/show', { title: 'Flight Detail', flight, arrivesDate});
+
+            console.log(tickets)
+            res.render('flights/show', { title: 'Flight Detail', flight, arrivesDate, tickets});
 
           });
     })
