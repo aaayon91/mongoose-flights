@@ -40,37 +40,12 @@ function show(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
         Ticket.find({flight: flight._id}, function(err, tickets) {
             // Now you can pass both the flight and tickets in the res.render call
-            // console.log(flight.destinations.arrival)
-            // const newFlight = new Flight();
-            // console.log(flight)
             const dt = flight.departs;
             let arrivesDate = `${dt.getFullYear()}-${(dt.getMonth() + 1).toString().padStart(2, '0')}`;
             arrivesDate += `-${dt.getDate().toString().padStart(2, '0')}T${dt.toTimeString().slice(0, 5)}`;
-            // const dt = newFlight.destination.arrival;
-            // let arrivalDate = `${dt.getFullYear()}-${(dt.getMonth() + 1).toString().padStart(2, '0')}`;
-            // arrivalDate += `-${dt.getDate().toString().padStart(2, '0')}T${dt.toTimeString().slice(0, 5)}`;
-
-            console.log(tickets)
+            // console.log(tickets)
             res.render('flights/show', { title: 'Flight Detail', flight, arrivesDate, tickets});
-
           });
     })
     
 }
-
-// function show(req, res) {
-//     Flight.findById(req.params.id, function(err, flight) {
-//         // console.log(flight.destinations.arrival)
-//         // const newFlight = new Flight();
-//         // console.log(flight)
-//         const dt = flight.departs;
-//         let arrivesDate = `${dt.getFullYear()}-${(dt.getMonth() + 1).toString().padStart(2, '0')}`;
-//         arrivesDate += `-${dt.getDate().toString().padStart(2, '0')}T${dt.toTimeString().slice(0, 5)}`;
-//         // const dt = newFlight.destination.arrival;
-//         // let arrivalDate = `${dt.getFullYear()}-${(dt.getMonth() + 1).toString().padStart(2, '0')}`;
-//         // arrivalDate += `-${dt.getDate().toString().padStart(2, '0')}T${dt.toTimeString().slice(0, 5)}`;
-//         res.render('flights/show', { title: 'Flight Detail', flight, arrivesDate});
-//     })
-    
-// }
-

@@ -1,16 +1,7 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}
-
-/* * {
+* {
   box-sizing: border-box;
   font-family: Helvetica;
-  color: #424748;
+  color: #080808;
 }
 
 body {
@@ -43,7 +34,7 @@ body > main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #E8ECEB;
+  background-color: whitesmoke;
   padding: 20px;
   overflow-y: scroll;
 }
@@ -70,21 +61,47 @@ nav > a.active {
 }
 
 #new-form {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 22rem));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #new-form *, #add-destination-form * {
-  font-size: 20px;
+  font-size: 18px;
   padding: 5px;
   border-radius: 5px;
 }
 
 #new-form input[type="submit"] {
-  grid-column: span 2;
-  width: 10rem;
-  margin-left: auto;
+  width: 12rem;
+  height: 3rem;
+}
+
+#add-new-ticket {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 12rem;
+  height: 3rem;
+}
+
+#detailsbtn, #add-ticket-form input[type="submit"] {
+  border-radius: 5px ;
+  width: 6rem;
+  height: 2rem;
+}
+
+#add-ticket-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+#new-form input[type="submit"]:hover, #add-destination-form input[type="submit"]:hover, 
+#add-new-ticket:hover, #detailsbtn:hover, #add-ticket-form input[type="submit"]:hover {
+  color: white;
+  background-color: black;
 }
 
 table {
@@ -128,14 +145,16 @@ table td {
 }
 
 #add-destination-form {
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1rem;
 }
 
 #add-destination-form input[type="submit"] {
-  width: 8rem;
-  grid-column: 2 / 3;
+  width: 12rem;
+  height: 3rem;
+  grid-column: 2 / 2;
   margin-bottom: 2rem;
 }
 
@@ -147,4 +166,9 @@ ul {
 	
 li {
   font-weight: bold;
-} */
+}
+
+#add-ticket-btn:hover {
+color: white;
+background-color: black;
+}

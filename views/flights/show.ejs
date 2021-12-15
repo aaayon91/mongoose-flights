@@ -15,6 +15,7 @@
 <!--Destinations Form-->
 <br><br><h2>Destinations</h2>
 <form id="add-destination-form" method="POST" action="/flights/<%= flight._id %>/destinations">
+  <div>
     <label>Destinations:</label>
     <select name="airport">
         <option value="AUS">AUS</option>
@@ -23,11 +24,14 @@
         <option value="LAX">LAX</option>
         <option value="SAN">SAN</option>
     </select>
+  </div>  
+  <div>
     <label>Date of Arrival:
         <input type="datetime-local" value="<%= arrivesDate %>" name="arrival">
-    </label>
-    <input type="submit" name="Add Destination">
-</form>
+    </label><br>
+  </div>
+    <input type="submit" value="Add Destination" name="Add Destination">
+</form><br>
 
 <!--Displaying Destinations on show page-->
 <% if (flight.destinations.length) { %>
@@ -69,9 +73,8 @@
 </table>
 
 
-
-  <!-- end cast list -->
-  <a href="/flights/<%= flight._id %>/tickets/new"><button>New Ticket</button></a>
+  <!-- New Ticket Link -->
+  <a href="/flights/<%= flight._id %>/tickets/new"><input type="submit" value="New Ticket" id="add-new-ticket"></a>
 
 
 <%- include('../partials/footer') %>
